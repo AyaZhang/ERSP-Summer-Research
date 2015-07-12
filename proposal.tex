@@ -41,9 +41,27 @@
 % An article style is separated into sections and subsections with 
 %   markup such as this.  Use \section*{Principles} for unnumbered sections.
 
+\paragraph{Text Mining}
+The first concept and attempts at text mining originated in the 1980s, but it was a large task with the limited computational power available at the time. The past decade has seen a large rise in interest in and research about data mining and sentiment analysis. Bo Pang[cite] explains the reasoning behind getting involved in sentiment analysis, which is the widespread demand to know other people's opinions. This can manifest as a desire to sell products and appeal to customers, or it can be as impactful as influencing an election. Pang's research is representative of much of what people are doing related to our project. The central idea is to make accurate predictions of people's opinions based on information from text, whether that be reviews, search engine entries, or one of many other sources of data. 
+
+\paragraph{Natural Language Processing}
+	In order for these predictive tasks to be accomplished, researchers must process and manipulate the given data to extract the desired information. There are many techniques for doing so, such as removal of stop words, using n-grams, and stemming. The latter was introduced as early as 1968, with Julie Beth Lovins' \textit{Development of a Stemming Algorithm}, where she describes the process by which all conjugations and forms of the same word root are reduced to a single representation. Research in the field of text mining requires the use of at least some of these techniques, and many others. These processes are all options to be explored in our work.
+
+
 
 \section{Project Description}
 
+\paragraph{Objective}
+The main goal for our project is to be able to discern the difference between a product that is being rated or reviewed based on its functionality versus one that is judged for aesthetic appeal. We wish to determine which features of a written review indicate its utility or status.
+
+\paragraph{Preparation}
+In the process of solving the posed problem, we must learn about techniques for modeling textual data. Some of the methods, such as stemming and using n-grams, are necessary in order to organize the data in meaningful ways. The most important method to learn, however, is that of linear regression. We will be using linear regression to fit a model to the given information. In order to accomplish this, we must learn about and practice solving linear regression equations by extracting information about textual connections with user ratings. We additionally have to decide on a universal definition for what a status or utility good is, and we will need to label some of the data manually in order to train and test the model. 
+
+\paragraph{Modeling}
+As mentioned above, we will be using linear regression to model the connection between user reviews and product categorization as status or utility goods. Part of the question is, what elements of a review are associated with this categorization? It could be largely dependent on keywords ('effective', 'pretty', etc.) or pairs of keywords ('not useful', 'less appealing', etc.). It could also depend on other aspects of the text, such as length of the review or percentage of punctuation used. In order to determine which factors influence a categorization of functionality or status, we will test multiple models and observe the given results.
+
+\paragraph{Analysis}
+We will collect information on the results of our models, and we will need to understand what the feedback means. In order to do this, we must analyze the results with statistical methods such as obtaining the Mean Squared Error. We will compare the different models, and in identifying the most accurate models, we can determine which factors are the most significant in predicting a product's appeal.
 
 
 \section{Challenges}
@@ -111,15 +129,7 @@ The project period is 8 weeks. Lists of tasks per stage:
 
 \begin{thebibliography}{99}
 
-\bibitem{gonzalez2012} Jonay I. Gonz\'{a}lez Hern\'{a}ndez, 
-Pilar Ruiz-Lapuente,	
-Hugo M. Tabernero,	
-David Montes,	
-Ramon Canal,	
-Javier M\'{e}ndez	
-and Luigi R. Bedin,
-{No surviving evolved companions of the progenitor of SN1006},
-Nature, {\bf 489}, 533-536 (2012).
+%\bibitem()
 
 \end{thebibliography}
 
