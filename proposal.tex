@@ -8,6 +8,7 @@
 
 \usepackage[pdftex]{graphicx}
 \usepackage{url}
+\usepackage{cite}
 
 % These are additional packages for "pdflatex", graphics, and to include
 % hyperlinks inside a document.
@@ -42,11 +43,10 @@
 %   markup such as this.  Use \section*{Principles} for unnumbered sections.
 
 \paragraph{Text Mining}
-The first concept and attempts at text mining originated in the 1980s, but it was a large task with the limited computational power available at the time. The past decade has seen a large rise in interest in and research about data mining and sentiment analysis. Bo Pang[cite] explains the reasoning behind getting involved in sentiment analysis, which is the widespread demand to know other people's opinions. This can manifest as a desire to sell products and appeal to customers, or it can be as impactful as influencing an election. Pang's research is representative of much of what people are doing related to our project. The central idea is to make accurate predictions of people's opinions based on information from text, whether that be reviews, search engine entries, or one of many other sources of data. 
+The first concept and attempts at text mining originated in the 1980s, but it was a large task with the limited computational power available at the time. The past decade has seen a large rise in interest in and research about data mining and sentiment analysis. Bo Pang\cite{pang2008opinion} explains the reasoning behind getting involved in sentiment analysis, which is the widespread demand to know other people's opinions. This can manifest as a desire to sell products and appeal to customers, or it can be as impactful as influencing an election. Pang's research is representative of much of what people are doing related to our project. The central idea is to make accurate predictions of people's opinions based on information from text, whether that be reviews, search engine entries, or one of many other sources of data. 
 
 \paragraph{Natural Language Processing}
-	In order for these predictive tasks to be accomplished, researchers must process and manipulate the given data to extract the desired information. There are many techniques for doing so, such as removal of stop words, using n-grams, and stemming. The latter was introduced as early as 1968, with Julie Beth Lovins' \textit{Development of a Stemming Algorithm}, where she describes the process by which all conjugations and forms of the same word root are reduced to a single representation. Research in the field of text mining requires the use of at least some of these techniques, and many others. These processes are all options to be explored in our work.
-
+	In order for these predictive tasks to be accomplished, researchers must process and manipulate the given data to extract the desired information. There are many techniques for doing so, such as removal of stop words, using n-grams, and stemming. The latter was introduced as early as 1968, with Julie Beth Lovins' \textit{Development of a Stemming Algorithm} \cite{lovins1968development}, where she describes the process by which all conjugations and forms of the same word root are reduced to a single representation. Research in the field of text mining requires the use of at least some of these techniques, and many others. These processes are all options to be explored in our work.
 
 
 \section{Project Description}
@@ -127,11 +127,12 @@ The project period is 8 weeks. Lists of tasks per stage:
 
 
 
-\begin{thebibliography}{99}
-
+\bibliography{proposal}{}
+\bibliographystyle{plain}
+%\begin{bibliography}
 %\bibitem()
 
-\end{thebibliography}
+%\end{bibliography}
 
 
 \end{document}
