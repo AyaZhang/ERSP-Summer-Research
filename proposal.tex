@@ -1,0 +1,127 @@
+\documentclass[dvips,12pt]{article}
+
+% Any percent sign marks a comment to the end of the line
+
+% Every latex document starts with a documentclass declaration like this
+% The option dvips allows for graphics, 12pt is the font size, and article
+%   is the style
+
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+
+% These are additional packages for "pdflatex", graphics, and to include
+% hyperlinks inside a document.
+
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+% These force using more of the margins that is the default style
+
+\begin{document}
+
+% Everything after this becomes content
+% Replace the text between curly brackets with your own
+
+\title{\textbf{Aesthetic/Utility Classification and Prediction Algorithm for Amazon Products}}
+\author{Linda Wogulis, Yijun Zhang}
+\date{\today}
+
+% You can leave out "date" and it will be added automatically for today
+% You can change the "\today" date to any text you like
+
+
+\maketitle
+
+% This command causes the title to be created in the document
+
+\section{Background}
+
+% An article style is separated into sections and subsections with 
+%   markup such as this.  Use \section*{Principles} for unnumbered sections.
+
+
+\section{Project Description}
+
+
+
+\section{Challenges}
+
+At this stage, there are four expected challenges that we identify:
+
+\paragraph{Manually labeling data}
+We will be using Amazon product data provided by Prof McAuley. The Amazon product dataset contains product reviews and metadata from Amazon, including 143.7 million reviews spanning May 1996 - July 2014.//CITE.//NOT SURE. Since we are interested in discerning the difference between a product being sold for aesthetic or utility, we need to manually label (need to confirm: label what). Only one or two categories will be chosen for us to train and test our model. Still, this can be a very exhausting task. 
+
+\paragraph{Defining the problem in the right way}
+Whether a product is sold for aesthetic or utility is more of a subjective question. Therefore, we need to define aesthetic and utility to classify products. In addition, we also need to determine a proper representation of the products, which can be binary, or on a scale of one to ten, where 10 means the product is sold purely for utility.
+
+\paragraph{Scaling models to large datasets}
+In order to develop a scalable model, we may need to learn techniques to handle large datasets.
+
+\paragraph{Statistical significance}
+To determine whether our finding has statistical significance, we need to learn to perform statistical hypothesis testing on our model.
+
+\section{Tools/Knowledge to learn}
+
+\paragraph{Regression} 
+Regression is an approach to analyze a training set of data to develop a hypothetical relationship between features of products and parameters to predict real-valued outputs, ie. people's tendency of buying the product for aesthetic or utility. Specifically, we are going to look at linear regression with multiple variables, a model which best describes our problem.
+	
+\paragraph{Classification}
+classification or regression?
+	
+\paragraph{Bag-of-words}
+Bag-of-words is a model representation in processing natural language by treating text as merely a collection of words, neglecting grammar and punctuations. By looking at customer reviews as a bag of words, we seek to identify keywords that are indicative of product appearance or utility based on frequency, and use them as features for regression and classification.
+	
+\paragraph{Sentiment analysis}
+Sentiment analysis aims to identify subjective opinions based on text. We want to learn about sentiment analysis to associate keywords with product properties of aesthetic or utility.
+
+\section{Timeline}
+The project period is 8 weeks. Lists of tasks per stage:
+
+\begin{itemize}
+	
+	\item Week 1 \& 2: Preparation
+	\begin{itemize}
+		\item Learn about basic models for natural language
+		\item Learn about regression using text			
+		\item Reproduce standard techniques to model data
+	\end{itemize}
+	
+	\item Week 3 \& 4: Data processing and labeling
+	\begin{itemize}
+		\item Develop proper definitions of status/utility for our data
+		\item Manually label the data using the definitions above
+	\end{itemize}
+	
+	\item Week 5 \& 6: Modeling
+	\begin{itemize}
+		\item Run experiments to try out different models and features
+		\item Identify those that are effective at predicting the labeled data
+	\end{itemize}
+	
+	\item Week 7 \& 8: Analysis
+	\begin{itemize}
+		\item High level analysis of our findings
+	\end{itemize}
+\end{itemize}
+
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{gonzalez2012} Jonay I. Gonz\'{a}lez Hern\'{a}ndez, 
+Pilar Ruiz-Lapuente,	
+Hugo M. Tabernero,	
+David Montes,	
+Ramon Canal,	
+Javier M\'{e}ndez	
+and Luigi R. Bedin,
+{No surviving evolved companions of the progenitor of SN1006},
+Nature, {\bf 489}, 533-536 (2012).
+
+\end{thebibliography}
+
+
+\end{document}
