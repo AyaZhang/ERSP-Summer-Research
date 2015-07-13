@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{Amazon}
+{Amazon product data} julian mcauley.
+\newblock \url{http://jmcauley.ucsd.edu/data/amazon/}.
+\newblock Accessed: 2015-07-12.
+
+\bibitem{lovins1968development}
+Julie~B Lovins.
+\newblock {\em Development of a stemming algorithm}.
+\newblock MIT Information Processing Group, Electronic Systems Laboratory,
+  1968.
+
+\bibitem{pang2008opinion}
+Bo~Pang and Lillian Lee.
+\newblock Opinion mining and sentiment analysis.
+\newblock {\em Foundations and trends in information retrieval}, 2(1-2):1--135,
+  2008.
+
+\end{thebibliography}
