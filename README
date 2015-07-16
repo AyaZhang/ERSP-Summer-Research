@@ -1,6 +1,8 @@
 Modules
 
 1. parseData.py
-1) parse(path, num)
 
-2. textProcess
+1) parse(path, num)
+2) allReviews(reviews)
+3) tokenize(reviewList)
+4) stemming //IN PROGRESS
