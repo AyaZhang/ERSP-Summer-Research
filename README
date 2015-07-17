@@ -3,6 +3,18 @@ Modules
 1. parseData.py
 
 1) parse(path, num)
-2) allReviews(reviews)
-3) tokenize(reviewList)
-4) stemming //IN PROGRESS
+2) parseAndWrite(infile, outfile, key)
+3) allReviews(reviews)
+4) tokenize(reviewList)
+5) stemming //IN PROGRESS
+
+2. analysis.py
+
+1) commonWords(reviewList, n)
+2) sentimentAnalysis(words, reviewList, reviews)
+
+Other
+
+1. testModule.py
+
+2. extractByKey.py

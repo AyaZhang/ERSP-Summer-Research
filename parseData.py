@@ -4,36 +4,49 @@ import string
 import nltk
 from nltk.stem.porter import *
 
-# Get rid of the annoying u' (unicode strings)
-def byteify(input):
-  if isinstance(input, dict):
-    return {byteify(key):byteify(value) for key,value in input.iteritems()}
-  elif isinstance(input, list):
-    return [byteify(element) for element in input]
-  elif isinstance(input, unicode):
-    return input.encode('utf-8')
-  else:
-    return input
-
-# Parse first n number of reviews from the system path
-def parse(path, n):
+# parse first n number of reviews from the system path
+def parse(path, n = 0):
   data = []
   count = 0
   with open(path) as f:
-    for line in f:
-      data.append(byteify(json.loads(line)))
-      count += 1
-      if count == n:
-        break
+    if n != 0:
+      for line in f:
+        data.append(eval(line))
+        count += 1
+        if count == n:
+          break
+    else:
+      for line in f:
+        data.append(eval(line))
   return data
 
-# Extract all reviewText sections and put into a list
-# Return type: [['word','word'],['word']]
+# separate product data by category name key
+def parseAndWrite(infile, outfile, key):
+  count = 0
+  punctuation = set(string.punctuation)
+  with open(infile) as inf, open(outfile,'w') as of:
+    for line in inf:
+      item = eval(line)
+      if item.has_key('categories'):
+        for cat in item['categories']:
+          r = ''.join([c.lower() for c in cat if not c in punctuation])
+          print r
+          if key in r.split():
+            of.write(json.dumps(item))
+            of.write(",")
+            count += 1
+            break
+      if count >= 5:
+        break
+  of.close()
+
+# extract all reviewText sections and put into a list
+# return type: [['word','word'],['word']]
 def allReviews(data):
   return [d['reviewText'] for d in data]
 
-# Tokenize reviews, remove punctuation and capitalization
-# Return type: [['word','word'],['word']]
+# tokenize reviews, remove punctuation and capitalization
+# return type: [['word','word'],['word']]
 def tokenize(data):
   punctuation = set(string.punctuation)
   reviewList = allReviews(data)
@@ -48,7 +61,7 @@ def tokenize(data):
 ################### NOT WORKING YET ####################
 ########################################################
 
-# Ignore capitalization and punctuation with stemming
+# ignore capitalization and punctuation with stemming
 def stemming(tokenizedList):
   stemmer = PorterStemmer()
   stemmedList = []
