@@ -1,4 +1,5 @@
 import json
+import os
 
 import string
 import nltk
@@ -11,6 +12,7 @@ def parse(path, n = 0):
   with open(path) as f:
     if n != 0:
       for line in f:
+        print eval(line)
         data.append(eval(line))
         count += 1
         if count == n:
@@ -23,21 +25,25 @@ def parse(path, n = 0):
 # separate product data by category name key
 def parseAndWrite(infile, outfile, key):
   count = 0
-  punctuation = set(string.punctuation)
   with open(infile) as inf, open(outfile,'w') as of:
     for line in inf:
+      #print line
       item = eval(line)
       if item.has_key('categories'):
         for cat in item['categories']:
-          r = ''.join([c.lower() for c in cat if not c in punctuation])
-          print r
-          if key in r.split():
-            of.write(json.dumps(item))
-            of.write(",")
-            count += 1
-            break
-      if count >= 5:
-        break
+          for k in cat:
+            if k == key:
+              of.write(line)
+#              of.write(",")
+#              print json.dumps(item)
+#              count += 1
+#              break
+#      if count >= 5:
+#        break
+  inf.close()
+  #with open(outfile,'rb+') as of:
+    #of.seek(-1,os.SEEK_END)
+    #of.truncate()
   of.close()
 
 # extract all reviewText sections and put into a list
