@@ -23,17 +23,18 @@ def parse(path, n = 0):
   return data
 
 # separate product data by category name key
-# TODO: remove duplicates
 def parseAndWrite(infile, outfile, key):
   count = 0
+  unique = set()
   with open(infile) as inf, open(outfile,'w') as of:
     for line in inf:
       item = eval(line)
       if item.has_key('categories'):
         for cat in item['categories']:
           for k in cat:
-            if k == key:
+            if k == key and item['asin'] not in unique:
               of.write(line)
+              unique.add(item['asin'])
   inf.close()
   of.close()
 
