@@ -23,27 +23,18 @@ def parse(path, n = 0):
   return data
 
 # separate product data by category name key
+# TODO: remove duplicates
 def parseAndWrite(infile, outfile, key):
   count = 0
   with open(infile) as inf, open(outfile,'w') as of:
     for line in inf:
-      #print line
       item = eval(line)
       if item.has_key('categories'):
         for cat in item['categories']:
           for k in cat:
             if k == key:
               of.write(line)
-#              of.write(",")
-#              print json.dumps(item)
-#              count += 1
-#              break
-#      if count >= 5:
-#        break
   inf.close()
-  #with open(outfile,'rb+') as of:
-    #of.seek(-1,os.SEEK_END)
-    #of.truncate()
   of.close()
 
 # extract all reviewText sections and put into a list
