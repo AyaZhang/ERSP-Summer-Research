@@ -38,6 +38,17 @@ def parseAndWrite(infile, outfile, key):
   inf.close()
   of.close()
 
+# read from infile
+# idSet: a set of asin numbers of desired products
+def parseAndWrite_reviews(infile, outfile, idSet):
+  with open(infile) as inf, open(outfile,'w') as of:
+    for line in inf:
+      item = eval(line)
+      if item['asin'] in idSet:
+        of.write(line)
+  inf.close()
+  of.close()
+
 # extract all reviewText sections and put into a list
 # return type: [['word','word'],['word']]
 def allReviews(data):
