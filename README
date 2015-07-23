@@ -4,10 +4,10 @@ Modules
 
 1) parse(path, num)
 2) parseAndWrite(infile, outfile, key)
-3) parseAndWrite_reviews(infile, outfile, idSet)
+3) parseAndWrite_constraint(infile, outfile, idSet)
 4) allReviews(reviews)
 5) tokenize(reviewList)
-6) stemming //IN PROGRESS
+6) stemming
 
 2. analysis.py
 

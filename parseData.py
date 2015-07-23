@@ -24,7 +24,6 @@ def parse(path, n = 0):
 
 # separate product data by category name key
 def parseAndWrite(infile, outfile, key):
-  count = 0
   unique = set()
   with open(infile) as inf, open(outfile,'w') as of:
     for line in inf:
@@ -38,9 +37,9 @@ def parseAndWrite(infile, outfile, key):
   inf.close()
   of.close()
 
-# read from infile
+# read from infile and extract only the review that are relevant
 # idSet: a set of asin numbers of desired products
-def parseAndWrite_reviews(infile, outfile, idSet):
+def parseAndWrite_constraint(infile, outfile, idSet):
   with open(infile) as inf, open(outfile,'w') as of:
     for line in inf:
       item = eval(line)
@@ -66,11 +65,8 @@ def tokenize(data):
     tokenizedList.append(words)
   return tokenizedList
 
-########################################################
-################### NOT WORKING YET ####################
-########################################################
-
 # ignore capitalization and punctuation with stemming
+# return type: [['word','word'],['word']]
 def stemming(tokenizedList):
   stemmer = PorterStemmer()
   stemmedList = []
@@ -78,6 +74,6 @@ def stemming(tokenizedList):
     words = []
     for w in d:
       w = stemmer.stem(w)
-      words.append(w)
+      words.append(str(w))
     stemmedList.append(words)
   return stemmedList
