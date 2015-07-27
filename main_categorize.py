@@ -28,8 +28,6 @@ unique = set()
 for i in reviews:
   unique.add(i['asin'])
 
-len(unique)		# 210076
-
 del reviews 	# free memory
 
 parseData.parseAndWrite_constraint(outfile, outfile3, unique)
