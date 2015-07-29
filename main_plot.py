@@ -5,6 +5,8 @@ import numpy
 import matplotlib.pyplot
 from scipy.stats import gaussian_kde
 
+import operator
+
 outfile2 = r"C:\Users\Yijun\Desktop\Amazon\reviews_shoes.txt"
 outfile3 = r"C:\Users\Yijun\Desktop\Amazon\meta_shoes_hasReview.txt"
 
@@ -38,7 +40,23 @@ for i in flats:
   if count == 1 or count == 0 or max_time == min_time:
     y.append(0)
   else:
-    y.append(2629743 * count/(max_time - min_time))
+    y.append(2629743  * count/(max_time - min_time))
+
+###################################################
+
+avgPrice = sum(x)/len(x)
+x = [(i - avgPrice) for i in x]
+avgReview = sum(y)/len(y)
+y = [(i - avgReview) for i in y]
+
+rank = dict()
+for i in range(0, 2770):
+  asin = flats[i]['asin']
+  rank[asin] = x[i]*y[i]
+
+sorted_rank = sorted(rank.items(), key=operator.itemgetter(1), reverse=True)
+
+####################################################d
 
 # plot the graph
 matplotlib.pyplot.scatter(x,y)
@@ -52,21 +70,9 @@ fig, ax = matplotlib.pyplot.subplots()
 ax.scatter(x, y, c=z, edgecolor='')
 matplotlib.pyplot.show()
 
-
-
 #######################################################
 ################# UNDER CONSTRUCTION ##################
 #######################################################
-
-flats = list()
-for i in shoes:
-  if i.has_key('price'):
-    for k in i['categories']:
-      for key in k:
-        if key == "Flats":
-          flats.append(i)
-
-len(flats)
 
 manyReviews = list()
 for i in flats:
@@ -74,7 +80,7 @@ for i in flats:
   for r in reviews:
     if r['asin'] == i['asin']:
       count += 1
-  if count > 30:
+  if count > 20:
     manyReviews.append(i)
 
 x = list()
@@ -93,14 +99,3 @@ for i in manyReviews:
     y.append(0)
   else:
     y.append(2629743 * count/(max_time - min_time))
-
-matplotlib.pyplot.scatter(x,y)
-matplotlib.pyplot.show()
-
-# density plot, calculate point density
-xy = numpy.vstack([x,y])
-z = gaussian_kde(xy)(xy)
-
-fig, ax = matplotlib.pyplot.subplots()
-ax.scatter(x, y, c=z, edgecolor='')
-matplotlib.pyplot.show()
