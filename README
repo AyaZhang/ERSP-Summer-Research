@@ -16,8 +16,7 @@ Modules
 
 Other
 
-1. testModule.py
-
-2. categorize.py
-
-3. sample.py
+1. main_testModule.py
+2. main_categorize.py
+3. main_sample.py
+4. main_plot.py
