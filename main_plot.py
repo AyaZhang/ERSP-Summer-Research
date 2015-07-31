@@ -37,10 +37,11 @@ for i in flats:
       count += 1
       max_time = r['unixReviewTime'] if r['unixReviewTime'] > max_time else max_time
       min_time = r['unixReviewTime'] if r['unixReviewTime'] < min_time else min_time
-  if count == 1 or count == 0 or max_time == min_time:
+  time = (max_time - min_time)/15778458.0    # half year
+  if time == 0 or count == 0:
     y.append(0)
   else:
-    y.append(2629743  * count/(max_time - min_time))
+    y.append(count/time)
 
 ###################################################
 
@@ -50,7 +51,7 @@ avgReview = sum(y)/len(y)
 y = [(i - avgReview) for i in y]
 
 rank = dict()
-for i in range(0, 2770):
+for i in range(0, len(x)):
   asin = flats[i]['asin']
   rank[asin] = x[i]*y[i]
 
@@ -71,7 +72,7 @@ ax.scatter(x, y, c=z, edgecolor='')
 matplotlib.pyplot.show()
 
 #######################################################
-################# UNDER CONSTRUCTION ##################
+####################### TRIAL 1 #######################
 #######################################################
 
 manyReviews = list()
@@ -82,6 +83,8 @@ for i in flats:
       count += 1
   if count > 20:
     manyReviews.append(i)
+
+len(manyReviews)    # 89
 
 x = list()
 y = list()
@@ -95,7 +98,65 @@ for i in manyReviews:
       count += 1
       max_time = r['unixReviewTime'] if r['unixReviewTime'] > max_time else max_time
       min_time = r['unixReviewTime'] if r['unixReviewTime'] < min_time else min_time
-  if count == 1 or count == 0 or max_time == min_time:
-    y.append(0)
+  time = (max_time - min_time)/15778458.0    # half year
+  print time
+  if time != 0:
+    y.append(count/time)
   else:
-    y.append(2629743 * count/(max_time - min_time))
+    y.append(count)
+
+avgPrice = sum(x)/len(x)
+x = [(i/avgPrice) for i in x]
+avgReview = sum(y)/len(y)
+y = [(i/avgReview) for i in y]
+
+rank = dict()
+for i in range(0, len(x)):
+  asin = manyReviews[i]['asin']
+  rank[asin] = x[i]*y[i]
+
+sorted_rank = sorted(rank.items(), key=operator.itemgetter(1), reverse=True)
+
+
+#######################################################
+####################### TRIAL 2 #######################
+#######################################################
+
+longTime = list()
+for i in flats:
+  count = 0
+  max_time = 0
+  min_time = 9999999999
+  for r in reviews:
+    if r['asin'] == i['asin']:
+      count += 1
+      max_time = r['unixReviewTime'] if r['unixReviewTime'] > max_time else max_time
+      min_time = r['unixReviewTime'] if r['unixReviewTime'] < min_time else min_time
+  if count != 0 and (max_time - min_time >= 31556926):
+    longTime.append(i)
+
+len(longTime)    # 498
+
+x = list()
+y = list()
+for i in longTime:
+  x.append(i['price'])
+  count = 0
+  max_time = 0
+  min_time = 9999999999
+  for r in reviews:
+    if r['asin'] == i['asin']:
+      count += 1
+  y.append(count)
+
+avgPrice = sum(x)/len(x)
+x = [(i/avgPrice) for i in x]
+avgReview = sum(y)/float(len(y))
+y = [(i/avgReview) for i in y]
+
+rank = dict()
+for i in range(0, len(x)):
+  asin = longTime[i]['asin']
+  rank[asin] = x[i]*y[i]
+
+sorted_rank = sorted(rank.items(), key=operator.itemgetter(1), reverse=True)

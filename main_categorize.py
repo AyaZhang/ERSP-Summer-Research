@@ -37,7 +37,7 @@ len(shoes_hasReview)	# 210076
 
 # shoe product data only if it has price attribute
 hasPrice = list()
-for i in shoesWithReviews:
+for i in shoes_hasReview:
   if i.has_key('price'):
     hasPrice.append(i)
 

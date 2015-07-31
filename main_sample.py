@@ -11,7 +11,6 @@ shoes = parseData.parse(outfile)
 len(shoes) # 366654
 
 # randomly choose 100 data
-sample = list()
 sample = random.sample(shoes, 100)
 
 for i in range(0,100):
