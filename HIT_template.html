@@ -1,0 +1,223 @@
+<!-- Bootstrap v3.0.3 -->
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<section class="container" id="Other" style="margin-bottom: 15px; padding: 10px;">
+<div class="row col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary">
+<div class="panel-heading" style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, sans-serif; font-size: 0.9em;"><strong>Instructions</strong></div>
+
+<div class="panel-body">
+<p dir="ltr" style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, sans-serif; font-size: 0.9em; line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span id="docs-internal-guid-14f10bd8-0509-e288-0820-6c74dc5414c0"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">The goal of our project is to classify products as either a &ldquo;status good&rdquo; or a &ldquo;utility good&rdquo;, and we are asking you to do this based on the <u>product image, name, and price</u>.</span></span></p>
+
+<p dir="ltr" style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, sans-serif; font-size: 0.9em; line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
+
+<p dir="ltr" style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, sans-serif; font-size: 0.9em; line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">In general, </span></span></p>
+
+<ul dir="ltr" style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, sans-serif; font-size: 0.9em;">
+	<li style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">A <strong>status good</strong> is one that is bought with the aim of increasing one&rsquo;s social desirability, or because the buyer sees the object as something attractive/desirable regardless of their need for the product&rsquo;s functional use. </span></span></li>
+	<li style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">A <strong>utility good</strong> is one that is bought mainly because of its functionality, effectiveness, or usefulness.</span></span></li>
+</ul>
+
+<p style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, sans-serif; font-size: 0.9em; line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">​</span></span></p>
+
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, sans-serif; font-size: 0.9em; line-height: 1.38;"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">​</span></span><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 14.6666666666667px; line-height: 1.38; white-space: pre-wrap; background-color: transparent;">You will judge <strong>10 products</strong> in this HIT, with <strong>an additional question</strong> that is very simple and has verifiable answers. The question is included to support the validity of the other answers</span><span style="background-color: transparent; font-size: 11.6999998092651px; line-height: 16.1459999084473px;"><font face="Verdana, Geneva, sans-serif">.&nbsp;</font></span><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 14.6666666666667px; line-height: 1.38; white-space: pre-wrap; background-color: transparent;"><u>Note that your submission may be rejected if you fail to answer that question</u>. If some of the pictures have bad links (&quot;loading&quot;)</span><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 14.6666666666667px; line-height: 1.38; white-space: pre-wrap; background-color: transparent;">, please choose N/A</span><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 14.6666666666667px; line-height: 1.38; white-space: pre-wrap; background-color: transparent;">. This may happen sometimes and it is not a problem.</span></p>
+
+<p style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, sans-serif; font-size: 0.9em; line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
+</div>
+</div>
+<!-- End Instructions --><!-- Content Body -->
+
+<section style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, sans-serif; font-size: 0.9em;">
+<fieldset><label>1. Please choose the option that best describes your opinion </label><br />
+Product name: ${Title_1}<br />
+Price: ${Price_1}<br />
+Image:<br />
+<img alt="loading" src="${Image_1}" style="margin-right: 10px;" />
+<div class="radio"><label><input name="Q1Answer" type="radio" value="1" />Almost entirely status</label></div>
+
+<div class="radio"><label><input name="Q1Answer" type="radio" value="2" />More status than utility</label></div>
+
+<div class="radio"><label><input name="Q1Answer" type="radio" value="3" />Both/Neither</label></div>
+
+<div class="radio"><label><input name="Q1Answer" type="radio" value="4" />More utility than status</label></div>
+
+<div class="radio"><label><input name="Q1Answer" type="radio" value="5" />Almost entirely utility</label></div>
+
+<div class="radio"><label><input name="Q1Answer" type="radio" value="0" />N/A</label></div>
+</fieldset>
+
+<fieldset><label>2. Please choose the option that best describes your opinion </label><br />
+Product name: ${Title_2}<br />
+Price: ${Price_2}<br />
+Image:<br />
+<img alt="loading" src="${Image_2}" style="margin-right: 10px;" />
+<div class="radio"><label><input name="Q2Answer" type="radio" value="1" />Almost entirely status</label></div>
+
+<div class="radio"><label><input name="Q2Answer" type="radio" value="2" />More status than utility</label></div>
+
+<div class="radio"><label><input name="Q2Answer" type="radio" value="3" />Both/Neither</label></div>
+
+<div class="radio"><label><input name="Q2Answer" type="radio" value="4" />More utility than status</label></div>
+
+<div class="radio"><label><input name="Q2Answer" type="radio" value="5" />Almost entirely utility</label></div>
+
+<div class="radio"><label><input name="Q2Answer" type="radio" value="0" />N/A</label></div>
+</fieldset>
+
+<fieldset><label>3. Please choose the option that best describes your opinion </label><br />
+Product name: ${Title_3}<br />
+Price: ${Price_3}<br />
+Image:<br />
+<img alt="loading" src="${Image_3}" style="margin-right: 10px;" />
+<div class="radio"><label><input name="Q3Answer" type="radio" value="1" />Almost entirely status</label></div>
+
+<div class="radio"><label><input name="Q3Answer" type="radio" value="2" />More status than utility</label></div>
+
+<div class="radio"><label><input name="Q3Answer" type="radio" value="3" />Both/Neither</label></div>
+
+<div class="radio"><label><input name="Q3Answer" type="radio" value="4" />More utility than status</label></div>
+
+<div class="radio"><label><input name="Q3Answer" type="radio" value="5" />Almost entirely utility</label></div>
+
+<div class="radio"><label><input name="Q3Answer" type="radio" value="0" />N/A</label></div>
+</fieldset>
+
+<fieldset><label>4. Please choose the option that best describes your opinion </label><br />
+Product name: ${Title_4}<br />
+Price: ${Price_4}<br />
+Image:<br />
+<img alt="loading" src="${Image_4}" style="margin-right: 10px;" />
+<div class="radio"><label><input name="Q4Answer" type="radio" value="1" />Almost entirely status</label></div>
+
+<div class="radio"><label><input name="Q4Answer" type="radio" value="2" />More status than utility</label></div>
+
+<div class="radio"><label><input name="Q4Answer" type="radio" value="3" />Both/Neither</label></div>
+
+<div class="radio"><label><input name="Q4Answer" type="radio" value="4" />More utility than status</label></div>
+
+<div class="radio"><label><input name="Q4Answer" type="radio" value="5" />Almost entirely utility</label></div>
+
+<div class="radio"><label><input name="Q4Answer" type="radio" value="0" />N/A</label></div>
+</fieldset>
+
+<fieldset><label>5. Please choose the option that best describes your opinion </label><br />
+Product name: ${Title_5}<br />
+Price: ${Price_5}<br />
+Image:<br />
+<img alt="loading" src="${Image_5}" style="margin-right: 10px;" />
+<div class="radio"><label><input name="Q5Answer" type="radio" value="1" />Almost entirely status</label></div>
+
+<div class="radio"><label><input name="Q5Answer" type="radio" value="2" />More status than utility</label></div>
+
+<div class="radio"><label><input name="Q5Answer" type="radio" value="3" />Both/Neither</label></div>
+
+<div class="radio"><label><input name="Q5Answer" type="radio" value="4" />More utility than status</label></div>
+
+<div class="radio"><label><input name="Q5Answer" type="radio" value="5" />Almost entirely utility</label></div>
+
+<div class="radio"><label><input name="Q5Answer" type="radio" value="0" />N/A</label></div>
+</fieldset>
+
+<fieldset><label>6. Please choose the option that best describes your opinion </label><br />
+Product name: ${Title_6}<br />
+Price: ${Price_6}<br />
+Image:<br />
+<img alt="loading" src="${Image_6}" style="margin-right: 10px;" />
+<div class="radio"><label><input name="Q6Answer" type="radio" value="1" />Almost entirely status</label></div>
+
+<div class="radio"><label><input name="Q6Answer" type="radio" value="2" />More status than utility</label></div>
+
+<div class="radio"><label><input name="Q6Answer" type="radio" value="3" />Both/Neither</label></div>
+
+<div class="radio"><label><input name="Q6Answer" type="radio" value="4" />More utility than status</label></div>
+
+<div class="radio"><label><input name="Q6Answer" type="radio" value="5" />Almost entirely utility</label></div>
+
+<div class="radio"><label><input name="Q6Answer" type="radio" value="0" />N/A</label></div>
+</fieldset>
+
+<fieldset><label>7. Please choose the option that best describes your opinion </label><br />
+Product name: ${Title_7}<br />
+Price: ${Price_7}<br />
+Image:<br />
+<img alt="loading" src="${Image_7}" style="margin-right: 10px;" />
+<div class="radio"><label><input name="Q7Answer" type="radio" value="1" />Almost entirely status</label></div>
+
+<div class="radio"><label><input name="Q7Answer" type="radio" value="2" />More status than utility</label></div>
+
+<div class="radio"><label><input name="Q7Answer" type="radio" value="3" />Both/Neither</label></div>
+
+<div class="radio"><label><input name="Q7Answer" type="radio" value="4" />More utility than status</label></div>
+
+<div class="radio"><label><input name="Q7Answer" type="radio" value="5" />Almost entirely utility</label></div>
+
+<div class="radio"><label><input name="Q7Answer" type="radio" value="0" />N/A</label></div>
+</fieldset>
+
+<fieldset><label>8. Please choose the option that best describes your opinion </label><br />
+Product name: ${Title_8}<br />
+Price: ${Price_8}<br />
+Image:<br />
+<img alt="loading" src="${Image_8}" style="margin-right: 10px;" />
+<div class="radio"><label><input name="Q8Answer" type="radio" value="1" />Almost entirely status</label></div>
+
+<div class="radio"><label><input name="Q8Answer" type="radio" value="2" />More status than utility</label></div>
+
+<div class="radio"><label><input name="Q8Answer" type="radio" value="3" />Both/Neither</label></div>
+
+<div class="radio"><label><input name="Q8Answer" type="radio" value="4" />More utility than status</label></div>
+
+<div class="radio"><label><input name="Q8Answer" type="radio" value="5" />Almost entirely utility</label></div>
+
+<div class="radio"><label><input name="Q8Answer" type="radio" value="0" />N/A</label></div>
+</fieldset>
+
+<fieldset><label>9. Please choose the option that best describes your opinion </label><br />
+Product name: ${Title_9}<br />
+Price: ${Price_9}<br />
+Image:<br />
+<img alt="loading" src="${Image_9}" style="margin-right: 10px;" />
+<div class="radio"><label><input name="Q9Answer" type="radio" value="1" />Almost entirely status</label></div>
+
+<div class="radio"><label><input name="Q9Answer" type="radio" value="2" />More status than utility</label></div>
+
+<div class="radio"><label><input name="Q9Answer" type="radio" value="3" />Both/Neither</label></div>
+
+<div class="radio"><label><input name="Q9Answer" type="radio" value="4" />More utility than status</label></div>
+
+<div class="radio"><label><input name="Q9Answer" type="radio" value="5" />Almost entirely utility</label></div>
+
+<div class="radio"><label><input name="Q9Answer" type="radio" value="0" />N/A</label></div>
+</fieldset>
+
+<fieldset><label>10. Please choose the option that best describes your opinion </label><br />
+Product name: ${Title_10}<br />
+Price: ${Price_10}<br />
+Image:<br />
+<img alt="loading" src="${Image_10}" style="margin-right: 10px;" />
+<div class="radio"><label><input name="Q10Answer" type="radio" value="1" />Almost entirely status</label></div>
+
+<div class="radio"><label><input name="Q10Answer" type="radio" value="2" />More status than utility</label></div>
+
+<div class="radio"><label><input name="Q10Answer" type="radio" value="3" />Both/Neither</label></div>
+
+<div class="radio"><label><input name="Q10Answer" type="radio" value="4" />More utility than status</label></div>
+
+<div class="radio"><label><input name="Q10Answer" type="radio" value="5" />Almost entirely utility</label></div>
+
+<div class="radio"><label><input name="Q10Answer" type="radio" value="0" />N/A</label></div>
+</fieldset>
+
+<fieldset>
+<div class="input-group"><label>Additional question: please provide a key feature of products that helped you make&nbsp;the decisions above </label> <input class="form-control" name="Q5FreeTextInput" size="120" type="text" /></div>
+</fieldset>
+</section>
+<!-- End Content Body --></div>
+</section>
+<!-- close container -->
+<style type="text/css">fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    margin-bottom:5px;
+}
+</style>
