@@ -49,14 +49,14 @@ The overall goal of our research project is to be able to identify and label a p
 \section{Experimental Design}
 
 \subsection{Hypothesis 1}
-To test Hypothesis 1, we will use Amazon’s Mechanical Turk (AMT) to ask our subjects to collectively label (how many) Amazon product data. AMT is an online labor market that allows one to outsource small tasks (HITs) to a large pool of workers for relatively low pay. The system has been used extensively under different research topics. According to a study//CITE, AMT workers are more demographically diverse compared to standard Internet samples.
+To test Hypothesis 1, we will use Amazon’s Mechanical Turk (AMT) to ask our subjects to collectively label (how many) Amazon product data. AMT is an online labor market that allows one to outsource small tasks (HITs) to a large pool of workers for relatively low pay. The system has been used extensively under different research topics. According to previous study discussing the validity of doing research on Mechanical Turk\cite{buhrmester2011amazon}, AMT workers are more demographically diverse compared to standard Internet samples.
 One concern while using AMT is how to obtain high quality data, especially to avoid spammers who attempts to make as much money as possible that they do not care about the instructions. There are two things we will do to reduce the noise:
 	
  \subparagraph{Qualification}
 	 A HIT approval rate indicates how many of the worker’s responses are accepted by reuqesters in percentage. We will assign our task to the workers only if their HIT approval rate is above a specific threshold. In addition, we will include a captcha question and state in the instruction that not having the correct answer to this question will result in the HIT being rejected.
 	 
 \subparagraph{Repeated Labeling}
-	 Previous work has shown that repeated-labeling, the process of having multiple individuals labeling some or all the data points, directly improves the quality of labeled data //CITE. We will test on a small product sample to find out how many labelers shall we allow to produce the most cost-efficient result.\newline
+	 Previous work has shown that repeated-labeling, the process of having multiple individuals labeling some or all the data points, directly improves the quality of labeled data\cite{sheng2008get}. We will test on a small product sample to find out how many labelers shall we allow to produce the most cost-efficient result.\newline
 	 
 \noindent The correlation coefficient between the result from different labelers will be computed. The result will be a value between -1 and 1 indicating the strength of association between two variables, where -1 means two variables are perfectly contrast to each other and 1 means perfectly agreed with each other. Our hypothesis is falsified if the correlation indicates weak or non-existent relationships.
 
@@ -79,7 +79,7 @@ If both hypotheses are supported, our experiment will result in a model that, wh
 
 
 
-\bibliography{proposal}{}
+\bibliography{reference}{}
 \bibliographystyle{plain}
 
 
