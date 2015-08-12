@@ -6,8 +6,11 @@ pathProduct = r"C:\Users\Yijun\Desktop\Amazon\meta_Clothing,_Shoes_&_Jewelry.txt
 outfile = r"C:\Users\Yijun\Desktop\Amazon\meta_shoes_unique.txt"
 outfile2 = r"C:\Users\Yijun\Desktop\Amazon\reviews_shoes.txt"
 outfile3 = r"C:\Users\Yijun\Desktop\Amazon\meta_shoes_hasReview.txt"
+outfile4 = r"C:\Users\Yijun\Desktop\Amazon\meta_shoes_unique+review+price.txt"
+outfile5 = r"C:\Users\Yijun\Desktop\Amazon\meta_shoes_unique+fifteen_review+price.txt"
 
-# separate shoes data
+
+# separate shoes datac
 parseData.parseAndWrite(pathProduct, outfile, "Shoes")
 shoes = parseData.parse(outfile)
 
@@ -42,3 +45,31 @@ for i in shoes_hasReview:
     hasPrice.append(i)
 
 len(hasPrice)		# 40955
+
+#############
+
+# Products with over 5 reviews
+outfile2 = r"C:\Users\Yijun\Desktop\Amazon\reviews_shoes.txt"
+from collections import defaultdict
+productID = defaultdict(int)
+with open(outfile2) as f:
+  for line in f:
+    item = eval(line)
+    i = item['asin']
+    productID[i] += 1
+
+len(productID)	# 210076
+
+shoe = set()
+shoes = parseData.parse(outfile4)
+for i in shoes:
+  shoe.add(i['asin'])
+
+len(shoe)	# 40955
+
+products = set()
+for key, value in productID.iteritems():
+  if key in shoe and value > 15:
+    products.add(key)
+
+len(products)	# 2146
