@@ -73,3 +73,18 @@ for key, value in productID.iteritems():
     products.add(key)
 
 len(products)	# 2146
+
+
+# separate reviews
+# all reviews -> sample reviews
+pathProducts = r"C:\Users\Yijun\Desktop\Amazon\meta_shoes_unique+fifteen_review+price.txt"
+pathReviews = r"C:\Users\Yijun\Desktop\Amazon\reviews_shoes.txt"
+outfile = r"C:\Users\Yijun\Desktop\Amazon\reviews_shoes_unique+fifteen_review+price.txt"
+
+products = parseData.parse(pathProducts)
+
+productIDs = set()
+for i in products:
+  productIDs.add(i['asin'])
+
+parseData.parseAndWrite_constraint(pathReviews, outfile, productIDs)

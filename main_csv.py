@@ -1,9 +1,9 @@
 import csv
+import json
 import parseData
 
-path = r"C:\Users\Yijun\Desktop\Amazon\Batch_2048158_batch_results.csv"
+path = r"C:\Users\Yijun\Desktop\Amazon\Batch_2054642_batch_results.csv"
 outfile = r"C:\Users\Yijun\Desktop\Amazon\labels.txt"
-
 
 # convert csv file into a list of lists
 result = list()
@@ -22,7 +22,7 @@ with open(path, 'rb') as csvfile:
 labels = dict()
 index = 1
 
-while index < 26:
+while index < len(result):
   for i in range(0, 10):\
 
     # check if product exists
@@ -33,6 +33,8 @@ while index < 26:
     array = [0 for k in range(0,6)]
     for j in range(0, 5):
       rating = result[index+j][10+i]
+      if rating == '':
+        rating = 0
       array[rating] = array[rating] + 1\
 
     # if >= 3 people agree on one label, use it
