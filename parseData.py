@@ -1,5 +1,6 @@
 import json
 import os
+import collections
 
 import string
 import nltk
@@ -77,3 +78,21 @@ def stemming(tokenizedList):
       words.append(str(w))
     stemmedList.append(words)
   return stemmedList
+
+# convert unicode string to string object
+def convert(data):
+  if isinstance(data, basestring):
+    return str(data)
+  elif isinstance(data, collections.Mapping):
+    return dict(map(convert, data.iteritems()))
+  elif isinstance(data, collections.Iterable):
+    return type(data)(map(convert, data))
+  else:
+    return data
+
+# parse labels file
+def loadLabels(path):
+  with open(path, 'r') as fi:
+    labels = json.load(fi)
+    fi.close()
+  return convert(labels)
