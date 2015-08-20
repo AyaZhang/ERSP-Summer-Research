@@ -29,7 +29,7 @@ def feature(key):
   for i in sample_reviews:
     if i['asin'] == key:
       count += 1
-  feat.append(count) # popularity featur
+  feat.append(count) # popularity feature
   return feat
 
 d1 = dict(sample_shoes.items()[len(sample_shoes)/2:]) # training set
@@ -40,18 +40,24 @@ X = [feature(key) for key in d1]
 
 theta,residuals,rank,s = numpy.linalg.lstsq(X, y)
 
-Xi = [feature(key) for key in d1]
+### Compute MSE on the training set
+Xi = [feature(key) for key in d2]
 
-def mse(x, y, theta0, theta1):
+def mse(x, y, theta):
   total = 0
   for i in range(0,len(x)):
-    total += (y[i] - x[i] * theta1 - theta0) ** 2
+    prediction = sum(x[i][j] * theta[j] for j in range(0, len(theta)))
+    total += (y[i] - prediction) ** 2
   return total/len(x)
 
-mse(Xi, y, theta[0], theta[1])
+mse(Xi, y, theta)
 
-# What is the model’s MSE on the test set?
-Xi = [feature(key) for key in d2]
-y = [labels[key] for key in d2]
+##### plot graph
+X = numpy.array(x[1] for x in X)
+y = numpy.array(y)
 
-mse(Xi, y, theta[0], theta[1])  
+import matplotlib.pyplot as plt
+plt.plot(X, y, 'o', label='Original data', markersize=10)
+plt.plot(X, theta[0]+theta[1]*X[1], 'r', label='Fitted line')
+plt.legend()
+plt.show()
