@@ -2,7 +2,7 @@ import csv
 import json
 import parseData
 
-path = r"C:\Users\Yijun\Desktop\Amazon\Batch_2054642_batch_results.csv"
+path = r"C:\Users\Yijun\Desktop\Amazon\FinalCSV1.csv"
 outfile = r"C:\Users\Yijun\Desktop\Amazon\labels.txt"
 
 # convert csv file into a list of lists
@@ -17,6 +17,7 @@ with open(path, 'rb') as csvfile:
       hit.append(i)
     result.append(hit)
 
+asins = set()
 
 # build a dictionary of asin and labels
 labels = dict()
@@ -29,7 +30,7 @@ while index < len(result):
     asin = result[index][i]
     if asin == '':
       continue\
-
+   
     array = [0 for k in range(0,6)]
     for j in range(0, 5):
       rating = result[index+j][10+i]
