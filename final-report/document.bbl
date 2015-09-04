@@ -36,6 +36,12 @@ Julian McAuley, Jure Leskovec, and Dan Jurafsky.
 \newblock In {\em Data Mining (ICDM), 2012 IEEE 12th International Conference
   on}, pages 1020--1025. IEEE, 2012.
 
+\bibitem{pang2008opinion}
+Bo~Pang and Lillian Lee.
+\newblock Opinion mining and sentiment analysis.
+\newblock {\em Foundations and trends in information retrieval}, 2(1-2):1--135,
+  2008.
+
 \bibitem{sheng2008get}
 Victor~S Sheng, Foster Provost, and Panagiotis~G Ipeirotis.
 \newblock Get another label? improving data quality and data mining using
